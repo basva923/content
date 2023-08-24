@@ -1522,6 +1522,7 @@ def create_updated_attribute_instance(demisto_args: dict, attribute_uuid: str) -
     value = demisto_args.get('value')
     first_seen = demisto_args.get('first_seen')
     last_seen = demisto_args.get('last_seen')
+    to_ids = demisto_args.get('to_ids')
 
     attribute_instance = MISPAttribute()
     attribute_instance.uuid = attribute_uuid
@@ -1539,6 +1540,8 @@ def create_updated_attribute_instance(demisto_args: dict, attribute_uuid: str) -
         attribute_instance.first_seen = first_seen
     if last_seen:
         attribute_instance.last_seen = last_seen
+    if to_ids:
+        attribute_instance.to_ids = to_ids == "true"
     return attribute_instance
 
 
