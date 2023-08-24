@@ -2395,6 +2395,12 @@ script:
       name: first_seen
     - description: Updated date when the attribute was last seen. For example, `2019-02-03`.
       name: last_seen
+    - auto: PREDEFINED
+      description: 'Whether to return only the attributes set with the "to_ids" flag. The default is to return all attributes without with and with out to_ids flag. Possible values: "true" and "false".'
+      name: to_ids
+      predefined:
+      - 'true'
+      - 'false'
     description: Update an attribute of an existing MISP event.
     name: misp-update-attribute
     outputs:
